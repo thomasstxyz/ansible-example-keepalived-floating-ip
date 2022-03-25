@@ -1,0 +1,3 @@
+vrrp_instance_state: MASTER
+vrrp_instance_priority: 200
+vrrp_instance_interface: eth0

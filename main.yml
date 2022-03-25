@@ -1,0 +1,20 @@
+---
+- hosts: all
+  tasks:
+    - name: Ensure keepalived is installed.
+      package:
+        name: keepalived
+        state: present
+
+    - name: Template keepalived config file
+      template:
+        src: keepalived.conf
+        dest: /etc/keepalived/keepalived.conf
+      notify:
+        - Restart keepalived
+
+  handlers:
+    - name: Restart keepalived
+      service:
+        name: keepalived
+        state: restarted

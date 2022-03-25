@@ -1,0 +1,3 @@
+vrrp_instance_state: BACKUP
+vrrp_instance_priority: 100
+vrrp_instance_interface: eth0
