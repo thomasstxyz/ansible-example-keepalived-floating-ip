@@ -25,6 +25,8 @@ Set the floating IP address in `templates/keepalived.conf`.
 You might need to change the network interface name in `group_vars/`,
 if it is different than `eth0`.
 
+If you run a firewall, make sure to expose port 112 for both peers.
+
 Run the playbook.
 
     $ ansible-playbook -i inventory main.yml
