@@ -25,7 +25,11 @@ Set the floating IP address in `templates/keepalived.conf`.
 You might need to change the network interface name in `group_vars/`,
 if it is different than `eth0`.
 
-If you run a firewall, make sure to expose port 112 for both peers.
+If you run a firewall, make sure to allow vrrp and multicast.
+E. g. for iptables:
+
+    $ iptables -I INPUT -p tcp -d 224.0.0.0/8 -j ACCEPT
+    $ iptables -I INPUT -p vrrp -j ACCEPT
 
 Run the playbook.
 
