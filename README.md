@@ -1,3 +1,8 @@
+# Branches:
+
+- main: floating IP address
+- nginx: floating IP address w/ service nginx
+
 # Example: Floating IP with keepalived
 
 This Ansible Playbook configures a floating IP address
