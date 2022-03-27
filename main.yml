@@ -5,6 +5,10 @@
       package:
         name: keepalived
         state: present
+    - name: Ensure nginx is installed.
+      package:
+        name: nginx
+        state: present
 
     - name: Template keepalived config file
       template:
@@ -12,6 +16,12 @@
         dest: /etc/keepalived/keepalived.conf
       notify:
         - Restart keepalived
+
+    - name: Template keepalived_failover.sh
+      template:
+        src: keepalived_failover.sh
+        dest: /etc/keepalived/
+        mode: '744'
 
   handlers:
     - name: Restart keepalived
