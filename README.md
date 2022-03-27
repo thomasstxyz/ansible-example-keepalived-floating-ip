@@ -2,7 +2,8 @@
 
 This Ansible Playbook configures a floating IP address
 on 2 servers (master & backup) with keepalived.
-If the master node becomes unreachable, the IP address will be floated to the backup node.
+If the master node becomes unreachable or the nginx service fails, 
+the IP address will be floated to the backup node.
 
 ## Usage
 
