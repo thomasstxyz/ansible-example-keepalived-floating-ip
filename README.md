@@ -31,6 +31,9 @@ E. g. for iptables:
     $ iptables -I INPUT -p tcp -d 224.0.0.0/8 -j ACCEPT
     $ iptables -I INPUT -p vrrp -j ACCEPT
 
+Keepalived ensures nginx is running, when its state is `MASTER`.
+The handler script is `templates/keepalived_failover.sh`.
+
 Run the playbook.
 
     $ ansible-playbook -i inventory main.yml
